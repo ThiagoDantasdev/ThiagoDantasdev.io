@@ -1,0 +1,78 @@
+.tecnologia-bg {
+  background-color: var(--cor-11);
+  box-shadow: inset 0px 80px var(--cor-0), inset 0px -80px var(--cor-0); /* dois valores separados por virgula para ter duas sombras no mesmo elemento,valor negativo na segunda é para ela ir para baixo. */
+}
+
+.tecnologia {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.tecnologia-imagem img {
+  height: 100%;
+  width: 100%; /* para respeitar a altura e largura em outros navegadores como o safari */
+  object-fit: cover; /* impede que a foto esmague em resoluções menores */
+  object-position: left; /* para a imagem começar cortando da direita */
+}
+
+.tecnologia-conteudo {
+  padding-top: 160px;
+  padding-bottom: 160px;
+}
+
+.tecnologia-conteudo > span {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.tecnologia-conteudo h2 {
+  margin-bottom: 32px;
+}
+
+.tecnologia-conteudo > p {
+  margin-bottom: 20px;
+}
+
+.tecnologia-conteudo a {
+  margin-bottom: 80px;
+}
+
+.tecnologia-vantagens {
+  display: flex;
+  gap: 40px;
+}
+.tecnologia-vantagens h3 {
+  margin-bottom: 8px;
+  width: max-content; /* para nunca quebrar em resoluçoes menores */
+}
+
+.tecnologia-vantagens img {
+  width: 24px;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 800px) {
+  .tecnologia-bg {
+    box-shadow: initial;
+  }
+  .tecnologia {
+    grid-template-columns: 1fr;
+  }
+  .tecnologia-conteudo {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .tecnologia-imagem {
+    display: none;
+  }
+  .tecnologia a {
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 600px) {
+  .tecnologia-vantagens {
+    flex-direction: column;
+  }
+}

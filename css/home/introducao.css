@@ -1,0 +1,65 @@
+.introducao-bg {
+  background-color: var(--cor-12);
+  box-shadow: inset 0 -120px var(--cor-0); /* INSET QUER DIZER XOMBRA INTERNA, O VALOR NEGATIVO É PARA FICAR NA PARTE DE BAIXO */
+}
+.introducao {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px 40px; /* SÓ IRA COLOCAR ESPAÇO PARA OS LADOS */
+}
+
+.introducao-conteudo {
+  align-self: end; /* COLOCA O CONTEUDO NA PARTE DE BAIXO DA DIV */
+  padding-bottom: 200px; /* apos colocar a box-shadow compensar com + o valor que colocou de sombra (nesse caso era 80px coloquei mais 120px) */
+}
+
+.introducao img {
+  height: 100%; /* FORÇA A TER 100% DO TAMANHO DO CONTAINER */
+  width: 100%; /* para respeitar a altura e largura em outros navegadores como o safari */
+  object-fit: cover; /* COBRE A FOTO SEM QUEBRAR QUANDO FICAR EM TAMANHOS DIFERENTES DE MONITOR */
+  border-radius: 4px;
+}
+
+.introducao h1 {
+  margin-bottom: 32px;
+}
+
+.introducao p {
+  margin-bottom: 20px;
+}
+
+.introducao a:hover {
+  background: linear-gradient(#ffb60d, #e59317);
+}
+
+@media (max-width: 1200px) {
+  .introducao h1 {
+    font-size: 48px;
+  }
+  .introducao p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 800px) {
+  .introducao-bg {
+    background-color: var(--cor-11);
+    padding-top: 40px;
+    box-shadow: inset 0 -60px var(--cor-0);
+  }
+  .introducao {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .introducao-conteudo {
+    padding-bottom: 0px;
+  }
+  .introducao h1 {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  .introducao img {
+    height: 300px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,63 @@
+.header-bg {
+  background-color: var(--cor-12);
+}
+.header {
+  display: flex;
+  flex-wrap: wrap; /* para quebrar a linha quando nao tiver mais espaço */
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+}
+.header-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px; /* para centralizar o conteudo,e nao ficar expandindo alem dos 1200px */
+}
+
+.header-menu a {
+  display: inline-block; /* para quando cair, o padding continuar funcionando */
+  padding: 16px 0px; /* para ampliar a area de contato */
+  position: relative; /* para o position absolute do after ter como relaçao esse elemento */
+}
+.header-menu a:hover::after {
+  width: 100%;
+}
+
+.header-menu a::after {
+  /* CRIAR UMA BARRA ABAIXO DO ITEM DO MENU AO PASSAR O MOUSE */
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0px;
+  background-color: var(--cor-0);
+  margin-top: 4px;
+  transition: 0.3s; /* tempo em que a barra leva pra chegar ao final */
+  position: absolute; /* QUANDO CRIOU O CONTEUDO ACRESCENTOU MAIS 6PX AO TAMANHO DELE (2 DE ALTURA E 4 DA MARGIN-TOP), ASSIM FICOU DESALINHADO A MARCA, COM O POSITION ABSOLUTE TIRA ELE DO FLUXO E VLTA A FICAR ALINHADO */
+}
+
+@media (max-width: 800px) {
+  .header-menu {
+    gap: 20px;
+  }
+  .header-menu a {
+    background-color: var(--cor-0);
+    padding: 12px 16px;
+    border-radius: 4px;
+  }
+  .header-menu a:hover {
+    background-color: var(--cor-10);
+  }
+  .header a::after {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-menu {
+    gap: 12px;
+  }
+  .header-menu a {
+    padding: 8px 12px;
+  }
+}

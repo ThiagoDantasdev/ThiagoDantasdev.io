@@ -1,0 +1,113 @@
+.bicicletas-bg {
+  background-image: linear-gradient(
+    /* cria um gradiente sem transiçao de cor,comeca justamente onde termina a outra */
+      to right,
+    var(--cor-0) 30%,
+    var(--cor-11) 0%
+  );
+}
+
+.bicicletas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.bicicletas-imagem {
+  display: grid; /* para os itens ficarem na mesma area do grid,sendo a imagem e o preco */
+}
+
+.bicicletas-imagem img {
+  grid-area: 1/1; /* para os itens ficarem na mesma area do grid,sendo a imagem e o preco */
+}
+
+.bicicletas-imagem span {
+  grid-area: 1/1; /* para os itens ficarem na mesma area do grid,sendo a imagem e o preco */
+  place-self: start end; /* para os itens ficarem na mesma area do grid,sendo a imagem e o preco */
+  margin-top: 20px;
+  display: inline-block;
+  background: var(--cor-12);
+  padding: 8px 16px 8px 8px;
+  border-radius: 4px 0 0 4px;
+}
+
+.bicicletas-conteudo {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-content: start; /* para quando a imagem crescer,o conteudo da coluna ao lado nao criar espaço */
+}
+
+.bicicletas h2,
+.bicicletas p {
+  grid-column: 1/ -1;
+}
+
+.bicicletas h2 {
+  margin-bottom: 20px;
+}
+
+.bicicletas h2::before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 8px;
+  background-color: var(--cor-p1);
+  margin-bottom: 8px;
+}
+
+.bicicletas p {
+  margin-bottom: 32px;
+}
+
+.bicicletas a {
+  place-self: end; /* para posicionar e ele nao expandir. */
+}
+
+.bicicletas li {
+  display: flex;
+  align-items: center;
+}
+
+.bicicletas ul {
+  display: grid;
+  gap: 16px;
+}
+
+/* .bicicletas li + li { Pode ser assim ou como esta acima,com grid direto na ul
+  margin-top: 16px;
+}  */
+
+.bicicletas-conteudo img {
+  width: 24px;
+  margin-right: 8px;
+}
+
+@media (max-width: 800px) {
+  .bicicletas-bg {
+    background: var(--cor-11);
+  }
+  .bicicletas {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .bicicletas-conteudo {
+    grid-template-columns: 1fr;
+  }
+
+  .bicicletas ul {
+    font-size: 1rem;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 32px;
+  }
+
+  .bicicletas a {
+    place-self: start;
+  }
+}
